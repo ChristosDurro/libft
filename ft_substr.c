@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdurro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/05 15:58:32 by cdurro            #+#    #+#             */
-/*   Updated: 2023/05/09 12:01:08 by cdurro           ###   ########.fr       */
+/*   Created: 2023/05/05 16:35:22 by cdurro            #+#    #+#             */
+/*   Updated: 2023/05/11 16:43:08 by cdurro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int	i;
+	size_t	sub_len;
+	char	*sub;
 
-	i = 0;
-	while (s[i])
-	{
-		if ((unsigned char)s[i] == (unsigned char)c)
-			return ((char *)(s + i));
-		i++;
-	}
-	if ((unsigned char)s[i] == (unsigned char)c)
-		return ((char *)(s + i));
-	return (0);
+	if (!s)
+		return (NULL);
+	if (start >= ft_strlen(s))
+		return (ft_strdup(""));
+	sub_len = ft_strlen(s + start);
+	if (sub_len >= len)
+		sub_len = len;
+	sub = malloc((sub_len + 1) * sizeof(char));
+	if (!sub)
+		return (NULL);
+	sub[sub_len] = 0;
+	while (sub_len-- > 0)
+		sub[sub_len] = s[sub_len + start];
+	return (sub);
 }

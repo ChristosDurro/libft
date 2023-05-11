@@ -1,29 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdurro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/05 15:58:32 by cdurro            #+#    #+#             */
-/*   Updated: 2023/05/09 12:01:08 by cdurro           ###   ########.fr       */
+/*   Created: 2023/05/05 17:24:12 by cdurro            #+#    #+#             */
+/*   Updated: 2023/05/08 14:58:56 by cdurro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
+	size_t	len;
+	size_t	i;
+	size_t	j;
+	char	*new_str;
 
+	len = ft_strlen(s1) + ft_strlen(s2) + 1;
+	new_str = malloc(len * sizeof(char));
+	if (!new_str)
+		return (NULL);
 	i = 0;
-	while (s[i])
+	while (i < ft_strlen(s1))
 	{
-		if ((unsigned char)s[i] == (unsigned char)c)
-			return ((char *)(s + i));
+		new_str[i] = s1[i];
 		i++;
 	}
-	if ((unsigned char)s[i] == (unsigned char)c)
-		return ((char *)(s + i));
-	return (0);
+	j = 0;
+	while (i < len - 1)
+	{
+		new_str[i] = s2[j];
+		i++;
+		j++;
+	}
+	new_str[i] = '\0';
+	return (new_str);
 }

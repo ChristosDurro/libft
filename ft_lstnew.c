@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdurro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/05 15:59:57 by cdurro            #+#    #+#             */
-/*   Updated: 2023/05/05 16:25:30 by cdurro           ###   ########.fr       */
+/*   Created: 2023/05/09 12:04:28 by cdurro            #+#    #+#             */
+/*   Updated: 2023/05/10 18:53:33 by cdurro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
-int	ft_isdigit(int c)
+t_list	*ft_lstnew(void *content)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	t_list	*new_node;
+
+	new_node = malloc(sizeof(t_list));
+	if (!new_node)
+		return (NULL);
+	new_node->content = content;
+	new_node->next = NULL;
+	return (new_node);
 }

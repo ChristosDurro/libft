@@ -6,7 +6,7 @@
 /*   By: cdurro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 16:44:33 by cdurro            #+#    #+#             */
-/*   Updated: 2023/05/11 15:28:12 by cdurro           ###   ########.fr       */
+/*   Updated: 2023/05/11 17:04:28 by cdurro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -174,10 +174,10 @@ int main()
 	printf("\nstr1 : Geeks, str2 : Quiz\n");
 	char str1_test8[] = "Geeks";
 	char str1_real8[] = "Geeks";
-    char str2_test8[] = "Quiz";
-    char str2_real8[] = "Quiz";
-    ft_memmove(str1_test8, str2_test8, sizeof(str2_test8));
-    memmove(str1_real8, str2_real8, sizeof(str2_real8));
+	char str2_test8[] = "Quiz";
+	char str2_real8[] = "Quiz";
+	ft_memmove(str1_test8, str2_test8, sizeof(str2_test8));
+	memmove(str1_real8, str2_real8, sizeof(str2_real8));
 	printf("    Real, str1 : %s, str2 : %s\n", str1_real8, str2_real8);
 	printf("    Test, str1 : %s, str2 : %s\n", str1_test8, str2_test8);
 	printf("\n--------------------------------------------------------\n\n");
@@ -225,30 +225,30 @@ int main()
 	printf("\n\n---- strlcpy ---\n\n");
 	printf("\n------ TEST 1 ------\n");
 	char src_real2[] = "Hello 42 !";
-    char dest_real2[19];
-    char dest_test2[19];
-    int src_real2_s;
-    int src_test2_s;
-    src_test2_s = ft_strlcpy(dest_test2, src_real2, 5);
-    src_real2_s = strlcpy(dest_real2, src_real2, 5);
-    printf("Real : Copied '%s' into '%s', length %d\n", src_real2, dest_real2, src_real2_s);
-    printf("Test : Copied '%s' into '%s', length %d\n", src_real2, dest_test2, src_test2_s);
+	char dest_real2[19];
+	char dest_test2[19];
+	int src_real2_s;
+	int src_test2_s;
+	src_test2_s = ft_strlcpy(dest_test2, src_real2, 5);
+	src_real2_s = strlcpy(dest_real2, src_real2, 5);
+	printf("Real : Copied '%s' into '%s', length %d\n", src_real2, dest_real2, src_real2_s);
+	printf("Test : Copied '%s' into '%s', length %d\n", src_real2, dest_test2, src_test2_s);
 	printf("\n--------------------------------------------------------\n\n");
 	
 	// strlcat
 	printf("\n\n---- strlcat ----\n\n");
 	printf("\n------ TEST 1 ------\n");
 	char src_real6[] = "Hello 42 !";
-    char dest_real6[19];
-    char dest_test6[19];
-    int src_real6_s;
-    int src_test6_s;
+	char dest_real6[19];
+	char dest_test6[19];
+	int src_real6_s;
+	int src_test6_s;
 	strcpy(dest_real6, "Hi, ");
 	strcpy(dest_test6, "Hi, ");
-    src_test6_s = ft_strlcat(dest_test6, src_real6, 9);
-    src_real6_s = strlcat(dest_real6, src_real6, 9);
-    printf("Real : Added '%s' : '%s', length %d\n", src_real6, dest_real6, src_real6_s);
-    printf("Test : Added '%s' : '%s', length %d\n", src_real6, dest_test6, src_test6_s);
+	src_test6_s = ft_strlcat(dest_test6, src_real6, 9);
+	src_real6_s = strlcat(dest_real6, src_real6, 9);
+	printf("Real : Added '%s' : '%s', length %d\n", src_real6, dest_real6, src_real6_s);
+	printf("Test : Added '%s' : '%s', length %d\n", src_real6, dest_test6, src_test6_s);
 	printf("\n--------------------------------------------------------\n\n");
 	
 	// toupper
@@ -472,17 +472,17 @@ int main()
 	
 	fd4 = open("putnbr.txt", O_WRONLY | O_CREAT, 0644);
 	ft_putnbr_fd(54, fd4);
-    ft_putstr_fd("\n", fd4);
-    ft_putnbr_fd(540056, fd4);
-    ft_putstr_fd("\n", fd4);
-    ft_putnbr_fd(0, fd4);
-    ft_putstr_fd("\n", fd4);
-    ft_putnbr_fd(-54, fd4);
-    ft_putstr_fd("\n", fd4);
-    ft_putnbr_fd(-2147483648, fd4);
-    ft_putstr_fd("\n", fd4);
-    ft_putnbr_fd(2147483647, fd4);
-    ft_putstr_fd("\n", fd4);
+	ft_putstr_fd("\n", fd4);
+	ft_putnbr_fd(540056, fd4);
+	ft_putstr_fd("\n", fd4);
+	ft_putnbr_fd(0, fd4);
+	ft_putstr_fd("\n", fd4);
+	ft_putnbr_fd(-54, fd4);
+	ft_putstr_fd("\n", fd4);
+	ft_putnbr_fd(-2147483648, fd4);
+	ft_putstr_fd("\n", fd4);
+	ft_putnbr_fd(2147483647, fd4);
+	ft_putstr_fd("\n", fd4);
 	close(fd4);
 	printf("\n--------------------------------------------------------\n\n");
 	
